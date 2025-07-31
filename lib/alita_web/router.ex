@@ -20,6 +20,7 @@ defmodule AlitaWeb.Router do
     get "/", PageController, :home
     get "/service", PageController, :service
     get "/contact", PageController, :contact
+    post "/message", ContactController, :create
   end
 
   # Other scopes may use custom stacks.

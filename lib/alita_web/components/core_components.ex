@@ -1,4 +1,4 @@
-defmodule AlitaWeb.CoreComponents do
+ defmodule AlitaWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
