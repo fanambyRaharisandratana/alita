@@ -4,12 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title default="Alita" suffix=" · Phoenix Framework">
+    <.live_title default="Alita" suffix=" web">
       {assigns[:page_title]}
     </.live_title>
+    <link rel="icon" sizes="32x32" type="image/png" href="/images/Alita_removebg.png">
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
-    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
-    </script>
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}></script>
+    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
   </head>
   <body class="bg-white">
 
@@ -17,12 +19,12 @@
       <div class="container mx-auto ">
         <div class="w-full flex  flex-col lg:flex-row">
             <div class=" flex justify-between  lg:flex-row">
-                <a href="https://pagedone.io/" class="flex items-center">
-                <img src="/images/LOGO-FINAL-MGBI.png" alt="Logo" style="height: 3rem;"/>
+                <a href={~p"/"} class="flex items-center">
+                <img src="/images/Alita_removebg.png" alt="Logo" style="height: 3rem;width: 6rem;"/>
                 </a>
-                <button data-collapse-toggle="navbar-default-example" type="button"
+                <button data-collapse-toggle="navbar-default" type="button"
                     class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-default-example" aria-expanded="false">
+                    aria-controls="navbar-default" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +34,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="hidden w-full lg:flex lg:pl-11 " id="navbar-default-example">
+            <div class="hidden w-full lg:flex lg:pl-11 " id="navbar-default">
                 <ul class="flex items-center flex-col mt-4 lg:mt-0 lg:ml-auto lg:flex-row gap-4">
                     <li>
                         <a href={~p"/"}
@@ -56,62 +58,73 @@
     {@inner_content}
 
     <footer class="px-4 divide-y dark:bg-gray-100 dark:text-gray-800">
-      <div class="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+      <div class="container flex flex-col justify-between py-2 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div class="lg:w-1/3">
           <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 lg:justify-start">
-            <div class="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="flex-shrink-0 w-5 h-5 rounded-full dark:text-gray-50">
-                <path d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z"></path>
-              </svg>
+            <div class="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600" style="width: 8rem;">
+              <img src="/images/Alita_removebg.png" alt="Logo" style="height: 6rem;margin-top: 40%;"/>
             </div>
-            <span class="self-center text-2xl font-semibold">Alita.re</span>
+            <!-- <span class="self-center text-2xl font-semibold">Alita.re</span> -->
           </a>
         </div>
         <div class="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div class="space-y-3">
-            <h3 class="tracking-wide uppercase dark:text-gray-900">Product</h3>
+            <h3 class="tracking-wide uppercase dark:text-gray-900">Navigation</h3>
             <ul class="space-y-1">
               <li>
-                <a rel="noopener noreferrer" href="#">Features</a>
+                <a rel="noopener noreferrer" href={~p"/"}>Accueil</a>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">Integrations</a>
+                <a rel="noopener noreferrer" href={~p"/service"}>Services</a>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">Pricing</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">FAQ</a>
+                <a rel="noopener noreferrer" href={~p"/contact"}>Contact</a>
               </li>
             </ul>
           </div>
           <div class="space-y-3">
-            <h3 class="tracking-wide uppercase dark:text-gray-900">Company</h3>
+            <h3 class="tracking-wide uppercase dark:text-gray-900">Contact</h3>
             <ul class="space-y-1">
               <li>
-                <a rel="noopener noreferrer" href="#">Privacy</a>
+                <a rel="noopener noreferrer" href="#" class="flex items-center space-x-2 text-neutral-950">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>mgbi.adm@gmail.com</span>
+                </a>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                <a rel="noopener noreferrer" href="#" class="flex items-center space-x-2 text-neutral-950">
+                  <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <rect x="7" y="4" width="10" height="16" rx="1" />
+                    <line x1="11" y1="5" x2="13" y2="5" />
+                    <line x1="12" y1="17" x2="12" y2="17.01" />
+                  </svg>
+                  <span>+261 34 51 560 31</span>
+                </a>
               </li>
             </ul>
           </div>
+
           <div class="space-y-3">
-            <h3 class="uppercase dark:text-gray-900">Developers</h3>
+            <h3 class="uppercase dark:text-gray-900">Adresse</h3>
             <ul class="space-y-1">
               <li>
-                <a rel="noopener noreferrer" href="#">Public API</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">Documentation</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">Guides</a>
+                <a rel="noopener noreferrer" href="#" class="flex items-center space-x-2 text-neutral-950">
+                  <svg class="h-8 w-8 text-neutral-950"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <span>II M 12 Bis Ankadivato - Antananarivo</span>
+                </a>
               </li>
             </ul>
           </div>
-          <div class="space-y-3">
-            <div class="uppercase dark:text-gray-900">Social media</div>
+          <!-- <div class="space-y-3">
+            <div class="uppercase dark:text-gray-900">Reseau sociaux</div>
             <div class="flex justify-start space-x-3">
               <a rel="noopener noreferrer" href="#" title="Facebook" class="flex items-center p-1">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
@@ -129,10 +142,9 @@
                 </svg>
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
-      <div class="py-6 text-sm text-center dark:text-gray-600">© 2025 Company Co. All rights reserved.</div>
     </footer>
   </body>
 </html>
